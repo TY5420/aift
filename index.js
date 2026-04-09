@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // 정적 파일 제공 경로를 절대 경로로 설정하여 오류 방지
-const clientPath = path.join(__dirname, '..', 'client');
+const clientPath = path.join(__dirname, 'client');
 app.use(express.static(clientPath));
 
 const pool = new Pool({ 
