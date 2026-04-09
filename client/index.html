@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global News Insights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Global News Insights</h1>
+        <nav>
+            <button onclick="fetchNews('korea')">🇰🇷 KR</button>
+            <button onclick="fetchNews('usa')">🇺🇸 US</button>
+            <button onclick="fetchNews('europe')">🇪🇺 EU</button>
+            <button onclick="fetchNews('technology')">💻 Tech</button>
+            <button onclick="showArchive()">📁 Archive</button>
+        </nav>
+    </header>
+
+    <main id="app">
+        <section id="news-list">
+            <h2>최신 뉴스</h2>
+            <div id="news-container">뉴스를 불러오는 중...</div>
+        </section>
+
+        <section id="analysis-view" class="hidden">
+            <h2>AI 분석 결과</h2>
+            <div id="analysis-container"></div>
+            <button onclick="backToList()">목록으로 돌아가기</button>
+        </section>
+
+        <section id="archive-view" class="hidden">
+            <h2>분석 기록 (Archive)</h2>
+            <div id="archive-container"></div>
+            <button onclick="backToList()">메인으로</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
