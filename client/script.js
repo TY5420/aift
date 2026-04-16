@@ -16,7 +16,14 @@ async function fetchNews(category = 'korea') {
             container.appendChild(card);
         });
     } catch (e) {
-        container.innerHTML = '<p>뉴스를 가져오는데 실패했습니다.</p>';
+        // 에러 메시지와 내용을 상세히 표시
+        container.innerHTML = `
+            <div style="color: #d9534f; padding: 10px; border: 1px solid #d9534f;">
+                <p><strong>뉴스를 가져오는데 실패했습니다.</strong></p>
+                <p style="font-size: 0.9em; font-family: monospace;">에러 내용: ${e.message}</p>
+            </div>
+        `;
+        console.error("상세 에러 로그:", e); // 개발자 도구(F12)에서도 확인 가능하도록
     }
 }
 
